@@ -6,6 +6,7 @@ const app = express();
 app.get('/', async (req, res) => {
     const [resultado] = await pool.query(`SELECT * FROM testTable`);
     console.log(resultado);
+    res.send(resultado);
 });
 
 app.listen(6199, () => {
